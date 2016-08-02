@@ -1,0 +1,40 @@
+<h2> Adicione itens para o seu form </h2>
+
+<p>
+	<b>form description:</b> {{form.description}}
+</p>
+
+<a href="{% url 'personal_fields:index' %}">Home</a>
+
+<ul>
+	<li><a href="{% url 'personal_fields:new_text_field' form_id %}">New text field</li>
+	<li><a href="{% url 'personal_fields:new_text_area' form_id %}">New text area</li>
+	<li><a href="{% url 'personal_fields:new_select_item' form_id %}">New text select item</li>
+<ul>
+
+<h4>Text fields</h4>
+
+{% for field in textFields %}
+	<p>
+		{{ field.name}} <br>
+		{{ field.value}} <br>
+	</p>
+{% endfor %}
+
+<h4>Text areas</h4>
+
+{% for field in textAreas %}
+	<p>
+		{{ field.name}} <br>
+		{{ field.value}} <br>
+	</p>
+{% endfor %}
+
+<h4>Select options</h4>
+
+{% for field in selectOptions %}
+	<p>
+		{{ field.name}} <br>
+		{{ field.value}} <br>
+	</p>
+{% endfor %}

@@ -1,0 +1,8 @@
+<h1>Create your personalized form</h1>
+
+<form action="{% url 'personal_fields:new_form' %}" method="post">
+{% csrf_token %}
+	<label>descrição</label><br>
+	<input type="text" name="form_description"><br>
+	<input type="submit" value="Submit">
+</form>
